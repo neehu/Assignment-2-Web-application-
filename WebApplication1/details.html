@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.templates/beta1/jquery.tmpl.js" type="text/javascript"></script>
+
+</head>
+<body>
+    <div>
+        
+            <span id="result2">
+                <script type="text/x-jQuery-tmpl" id="query2">
+
+                    ${listingid}
+                    <img src="https://sample-listings.herokuapp.com${image}">
+
+                    ${beds}
+                    ${baths}
+                    ${features}
+
+                </script>
+            </span>
+        
+    </div>
+    <script type="text/javascript">
+
+        //$.getJSON("https://sample-listings.herokuapp.com/listings/1", function (data)
+        //{
+        //});
+
+        var obj =
+            {
+                listingID: "1", image: "/images/1.jpg", address: "1503 Elk Forest Rd, Elkton, MD 21921",
+                beds: "5", baths: "5", features: "Appliance Dishwasher, Exhaust Fans, Icemaker, Dryer, Instant Hot-Water Dispenser, Microwave, Refrigerator, Six Burner Stove, Trash Compactor, Washer, Water Conditioner, Water Dispenser\nCooling: Heat Pumps\nHeating: Heat Pump\nKitchen: Gourmet, Kitchen Island, Second Kitchen, Breakfast Room\nWindow: Double Pane Windows, Palladian Windows, Recessed Lights, Screened, Six Panel Doors, Insulated Windows, Insulated Doors, Atrium Door, French Doors\nRoom Details: Living Room, Dining Room, Master Bedroom, Bedroom 4, Kitchen, Family Room, Library, Foyer, Breakfast Room, Florida/Sun Room",
+                estimatedValue: "1594000", changeOverLastYear: -30.02
+            }
+        $("#query2").tmpl(obj).appendTo("#result2")
+
+    </script>
+
+
+</body>
+</html>
